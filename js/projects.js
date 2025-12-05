@@ -24,12 +24,14 @@
 			switch (this.id) {
 				case "jaybot": {
 					return window.open("https://github.com/Etown-CS/25_SCARP_JayWingAITutor");
-				}
-				case "racepace3d": {
+				} case "racepace3d": {
 					return window.open("https://github.com/Etown-CS310/racepace3D");
+				} case "worldfacts": {
+					return window.open("http://millerk7.etowndb.com/worldfacts");
+				} case "mybook": {
+					return window.open("http://millerk7.etowndb.com/mybook");
 				}
 			}
-
 			window.location = href;
 		}
 	}
