@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Kaiden Miller</title>
+  <link rel="icon" type="png" href="/img/favicon.png">
+
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <!-- Load Navbar -->
+  <script>
+    fetch('/components/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+        
+        // Highlight the Portfolio link after navbar loads
+        const portfolioLink = document.querySelector('a[href="/portfolio"]');
+        if (portfolioLink) {
+          portfolioLink.classList.add('active');
+        }
+      });
+  </script>
+</head>
+
+<body id="top">
+
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>  
+
+
+  <!-- Recent Work -->
+  <section id="recent-work" class="py-5 bg-night text-white">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-lg-4 section-heading">
+          <h1 class="text-secondary">Recent Work</h1> 
+        </div>
+
+        <div class="col-12 col-lg-8">
+          <h5 id="racepace3d">RacePace3D</h5>
+          <h6 class="text-secondary">Application Development · Aug 2025 - Dec 2025</h6>
+          <ul class="mb-1">
+            <li>RacePace3D is a fast-paced endless runner where players control a running who must dodge obstacles, time their jumps, and survive as long as possible. This project was developed as part of Elizabethtown College's Application Development class and includes:</li>
+              <ul>
+                <li>Custom pressable buttons with animations</li>
+              </ul>
+              <div class="row">
+                <div class="d-flex flex-wrap gap-3 ps-4 py-2">
+                  <img src="/assets/portfolio/RacePace3D/buttons/light/LeftArrow.png" class="img-fluid pressable" alt="Back Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/light/Refresh.png" class="img-fluid pressable" alt="Refresh Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/light/NextArrow.png" class="img-fluid pressable" alt="Next Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/light/New.png" class="img-fluid pressable" alt="New Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/light/Edit.png" class="img-fluid pressable" alt="Edit Button">
+                </div>
+              </div>
+              <div class="row">
+                <div class="d-flex flex-wrap gap-3 ps-4 py-2">
+                  <img src="/assets/portfolio/RacePace3D/buttons/dark/Logout.png" class="img-fluid pressable" alt="Logout Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/dark/Start.png" class="img-fluid pressable" alt="Start Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/dark/Delete.png" class="img-fluid pressable" alt="Delete Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/dark/New.png" class="img-fluid pressable" alt="New Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/dark/Edit.png" class="img-fluid pressable" alt="Edit Button">
+                </div>
+              </div>
+              <div class="row">
+                <div class="d-flex flex-wrap gap-3 ps-4 py-2">
+                  <img src="/assets/portfolio/RacePace3D/buttons/dark/Characters.png" class="img-fluid pressable" alt="Characters Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/dark/Friends.png" class="img-fluid pressable" alt="Friends Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/dark/Teams.png" class="img-fluid pressable" alt="Teams Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/dark/Highscores.png" class="img-fluid pressable" alt="Highscores Button">
+                  <img src="/assets/portfolio/RacePace3D/buttons/dark/View.png" class="img-fluid pressable" alt="View Button">
+                </div>
+              </div>
+              <ul>
+                <li>New and Updated Playable Characters</li>
+              </ul>
+              <div class="row">
+                <div class="d-flex flex-wrap gap-3 ps-4 py-2">
+                  <img src="/assets/portfolio/RacePace3D/characters/Cole3D.gif" class="img-fluid pressable" alt="Cole">
+                  <img src="/assets/portfolio/RacePace3D/characters/Eliud3D.gif" class="img-fluid pressable" alt="Eluid">
+                  <img src="/assets/portfolio/RacePace3D/characters/Grant3D.gif" class="img-fluid pressable" alt="Grant">
+                  <img src="/assets/portfolio/RacePace3D/characters/Jakob3D.gif" class="img-fluid pressable" alt="Jakob">
+                  <img src="/assets/portfolio/RacePace3D/characters/Mo3D.gif" class="img-fluid pressable" alt="Mo">
+                  <img src="/assets/portfolio/RacePace3D/characters/Falk3D.gif" class="img-fluid pressable" alt="Falk">
+                </div>
+              </div>
+          </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-5 bg-lighter text-white">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 text-center mb-4">
+          <h1 class="text-secondary">Portfolio</h1>
+          <h6>A selection of my graphic design work.</h6>
+        </div>
+
+        <!-- Left Column -->
+        <div class="col-md-6">
+          <img src="/assets/portfolio/100-iterations/100-iterations-star-wars.png" class="img-fluid mb-4" alt="100 Iterations of Star Wars Helmets">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="/assets/portfolio/stationary/buisness-card-front.png" class="img-fluid mb-4" alt="Business Card Front">
+            </div>
+            <div class="col-md-6">
+              <img src="/assets/portfolio/stationary/buisness-card-back.png" class="img-fluid mb-4" alt="Business Card Back">
+            </div>
+          </div>
+          <img src="/assets/portfolio/stationary/letterhead.png" class="img-fluid mb-4" alt="Letterhead">
+          <img src="/assets/portfolio/scad/scad-poster.png" class="img-fluid mb-4" alt="Scholarship and Creative Arts Day Poster">
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-6">
+          <img src="/assets/portfolio/squid-game/squid-game-vector.png" class="img-fluid mb-4" alt="Squid Game Vector">
+          <img src="/assets/portfolio/anniversary-collage/etown-anniversary-collage.png" class="img-fluid mb-4" alt="ETown 125th Year Anniversary Collage">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="/assets/portfolio/combination-mark/combination-mark-color.png" class="img-fluid mb-4" alt="Combination Mark Color">
+            </div>
+            <div class="col-md-6">
+              <img src="/assets/portfolio/combination-mark/combination-mark-black.png" class="img-fluid mb-4" alt="Combination Mark Black">
+            </div>
+          </div>
+          <img src="/assets/portfolio/mad-max/mad-max-poster.png" class="img-fluid mb-4" alt="Mad Max Vector Poster">
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>
