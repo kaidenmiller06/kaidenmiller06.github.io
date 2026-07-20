@@ -1,0 +1,111 @@
+.hero {
+  width: 100%;
+  background-color: #0F172A;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  box-sizing: border-box;
+}
+
+.hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 120px 30px 80px;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.hero-eyebrow {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(16px, 1vw + 12px, 18px);
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.hero-heading {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(36px, 5vw + 20px, 72px);
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.hero-name {
+  color: #004B98; /* matches your hover/accent blue */
+}
+
+.hero-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.hero-details p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(16px, 1vw + 12px, 18px);
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #CBD5E1; /* lighter gray-blue, matches muted text in your design */
+  margin: 0;
+}
+
+.hero-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-image {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-image img {
+  width: clamp(280px, 20vw, 300px);
+  height: clamp(280px, 20vw, 300px);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero-email img {
+    height: clamp(24px, 2vw, 32px);
+    width: clamp(24px, 2vw, 32px);
+}
+
+/* Stack vertically on smaller screens */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 140px;
+  }
+
+  .hero-text {
+    align-items: center;
+    max-width: 100%;
+  }
+}

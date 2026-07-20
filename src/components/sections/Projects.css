@@ -1,0 +1,51 @@
+.projects {
+  width: 100%;
+  background-color: #0F172A;
+  box-sizing: border-box;
+}
+
+.projects-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 120px 30px 80px;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+.projects-heading {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(36px, 5vw + 20px, 72px);
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0;
+  text-align: center;
+}
+
+.projects-blue {
+  color: #004B98;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1080px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
