@@ -1,73 +1,53 @@
 .hero {
   width: 100%;
+  box-sizing: border-box;
   background-color: #0F172A;
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
-  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .hero-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+
   max-width: 1140px;
   margin: 0 auto;
-  padding: 120px 30px 80px;
+  padding: 180px 30px 100px;
   gap: 40px;
-  box-sizing: border-box;
 }
 
 .hero-text {
   display: flex;
   flex-direction: column;
-  gap: 16px;
   max-width: 600px;
+  gap: 16px;
 }
 
-.hero-eyebrow {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: clamp(16px, 1vw + 12px, 18px);
-  line-height: 120%;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
+.subheading.hero-eyebrow {
   margin: 0;
+  color: #FFFFFF;
 }
 
 .hero-heading {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: clamp(36px, 5vw + 20px, 72px);
-  line-height: 120%;
-  letter-spacing: -0.03em;
-  color: #FFFFFF;
   margin: 0;
 }
 
-.hero-name {
-  color: #004B98; /* matches your hover/accent blue */
+.hero-blue {
+  color: #004B98;
 }
 
 .hero-details {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-top: 8px;
 }
 
 .hero-details p {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: clamp(16px, 1vw + 12px, 18px);
-  line-height: 120%;
-  letter-spacing: -0.02em;
-  color: #CBD5E1; /* lighter gray-blue, matches muted text in your design */
-  margin: 0;
+  margin-bottom: 6px;
 }
 
 .hero-links {
@@ -76,24 +56,143 @@
   gap: 16px;
 }
 
-.hero-image {
-  flex-shrink: 0;
+/* Hero Photo */
+.hero-profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  flex-shrink: 0;
+  gap: 20px;
 }
 
-.hero-image img {
+.hero-profile-wrapper {
+  position: relative;
   width: clamp(280px, 20vw, 300px);
   height: clamp(280px, 20vw, 300px);
-  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.hero-profile-image {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 50%;
+}
+
+
+/* Hero Ring */
+.hero-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+
+  pointer-events: none;
+  animation: rotateRing 12s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotateRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-ring circle {
+  animation: dashFlow 6s linear infinite, dashMorph 8s ease-in-out infinite;
+  transition: stroke 0.3s ease;
+}
+
+@keyframes dashFlow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -120;
+  }
+}
+
+@keyframes dashMorph {
+  0% {
+    stroke-dasharray: 65 30 10 25;
+  }
+
+  50% {
+    stroke-dasharray: 40 35 25 15;
+  }
+
+  100% {
+    stroke-dasharray: 65 30 10 25;
+  }
+}
+
+
+/* Hero Tooltip */
+.body-base.hero-tooltip.hero-tooltip {
+  position: absolute;
+  top: -2.5%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+
+  background-color: #004B98;
+  border-radius: 999px;
+  padding: 6px 12px;
+
+  font-family: 'JetBrains Mono', monospace;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Tooltip Message Arrow */
+.hero-tooltip::after {
+  content: "";
+
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #004B98;
+}
+
+
+.hero-grey {
+  color: #757575;
+}
+
+.hero-profile-wrapper:hover {
+  transform: scale(0.97);
+}
+
+.hero-profile-wrapper:hover .hero-ring circle {
+  stroke: #0060C4;
+}
+
+.hero-profile-wrapper:hover .hero-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .hero-email img {
-    height: clamp(24px, 2vw, 32px);
-    width: clamp(24px, 2vw, 32px);
+  height: clamp(24px, 2vw, 32px);
+  width: clamp(24px, 2vw, 32px);
 }
 
 /* Stack vertically on smaller screens */

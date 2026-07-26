@@ -10,7 +10,6 @@ import { useState, useRef } from 'react';
  * @param {string} props.image - The URL of the image to display in the action link.
  * @param {string} props.variant - The variant of the action link (e.g., 'accent').
  * @param {string} props.title - The title to display in the action link.
- * @returns {JSX.Element} The rendered ActionLink component.
  */
 function ActionLink({ href, text, image, title, variant }) {
 
@@ -20,7 +19,7 @@ function ActionLink({ href, text, image, title, variant }) {
 
     // Determine the classes to apply based on the variant and whether text is provided
     const classes = [
-        "action-link",
+        "action-link subheading",
         variant === "accent" && "action-link-accent",
         variant === "outline" && "action-link-outline",
         !text && "action-link-icon-only",
@@ -37,7 +36,7 @@ function ActionLink({ href, text, image, title, variant }) {
                 {image && <img src={image} alt="" />}
                 {text && <p>{text}</p>}
             </a>
-            {title && <span className={`action-link-tooltip`}>
+            {title && <span className={`action-link-tooltip body-base`}>
                 {title}
             </span>}
         </div>

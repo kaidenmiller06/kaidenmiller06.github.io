@@ -1,0 +1,13 @@
+.experience-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.experience-carousel-slot {
+  position: absolute;
+  top: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  cursor: pointer;
+}

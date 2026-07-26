@@ -1,38 +1,50 @@
-.experience {
+.experience-outer {
+  position: relative;
   width: 100%;
-  background-color: #1E293B;
+  overflow: hidden;
 }
 
-.experience-inner {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 24px 80px;
-  box-sizing: border-box;
+/* Color split for different sections */
+.experience-dark {
+  padding-top: 150px;
+  background-color: #0F172A;
+}
+
+.experience {
+  padding-top: 150px;
+  background-color: #1E293B;
 }
 
 .experience-images {
   display: flex;
-  gap: 16px;
-  height: 220px; /* pick a value that matches your Figma design */
-  margin-top: -60px;
-  margin-bottom: 40px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  gap: 24px;
+  
 }
 
 .experience-images img {
-  height: 100%;
-  width: auto;
-  object-fit: cover;
-  border-radius: 12px;
+  height: 300px;
+  flex-shrink: 0;
+  border-radius: 16px;
+}
+
+.experience-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 120px 30px 650px;
+  gap: 40px;
+  box-sizing: border-box;
 }
 
 .experience-heading {
-  font-family: 'Inter';
-  font-weight: 700;
-  font-size: clamp(36px, 5vw + 20px, 60px);
-  line-height: 120%;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
   margin: 0;
+  text-align: center;
 }
 
 .experience-blue {
