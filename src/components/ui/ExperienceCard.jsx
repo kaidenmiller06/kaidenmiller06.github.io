@@ -19,14 +19,14 @@ function ExperienceCard({ image, title, subtitle, bullets, skills }) {
         <p className="experience-subtitle subheading">{subtitle}</p>
         <ul>
           {bullets.map((bullet, index) => (
-            <li key={index} className="experience-bullet body-base">{bullet}</li>
+            <li key={index} className="experience-bullet body-bullet">{bullet}</li>
           ))}
         </ul>
       </div>
 
       <div className="experience-footer">
         {skills.map((text, i) => (
-          <p key={i} className="experience-skill body-base">{text}</p>
+          <p key={i} className="experience-skill body-bullet">{text}</p>
         ))}
       </div>
     </div>

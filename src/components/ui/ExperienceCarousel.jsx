@@ -60,7 +60,7 @@ function ExperienceCarousel() {
             key={i}
             className="experience-carousel-slot"
             style={{
-              transform: `translateX(${distance * 200}px) scale(${1 - Math.abs(distance) * 0.15})`,
+              transform: `translateX(${distance * 190}px) scale(${1 - Math.abs(distance) * 0.15})`,
               zIndex: 10 - Math.abs(distance),
             }}
             onClick={() => handleCardClick(i)}

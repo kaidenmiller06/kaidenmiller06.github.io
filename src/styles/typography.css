@@ -23,7 +23,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: clamp(14px, 0.8vw + 10px, 18px);
+  font-size: clamp(12px, 0.8vw + 10px, 16px);
   line-height: 120%;
   color: #757575;
 }
@@ -32,7 +32,16 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(14px, 0.7vw + 10px, 16px);
-  line-height: 140%;
+  font-size: clamp(12px, 0.8vw + 10px, 16px);
+  line-height: 120%;
+  color: #FFFFFF;
+}
+
+.body-bullet {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(11px, 0.6vw + 8px, 14px);
+  line-height: 120%;
   color: #FFFFFF;
 }

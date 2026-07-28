@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Header.css';
 
@@ -31,8 +32,8 @@ function Header() {
           <a href="#hero" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
           <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="#footer" onClick={() => setMenuOpen(false)}>About</a>
+          <Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
         </nav>
       </div>
     </header>

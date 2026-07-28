@@ -80,7 +80,7 @@ function Experience() {
         </div>
 
         {/* Experience content */}
-        <div className="experience-inner">
+        <div id="experience" className="experience-inner">
           <h1 ref={slideRef} className={`experience-heading title slide-up ${isSlideVisible ? 'is-visible' : ''}`}>
             Real-world <span className="experience-blue">experience</span>
           </h1>

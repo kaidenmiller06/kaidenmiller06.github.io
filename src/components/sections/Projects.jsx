@@ -12,7 +12,7 @@ function Projects() {
   const [ref, isVisible] = useSlideUpOnVisible(1);
 
   return (
-    <section className="projects">
+    <section id="projects" className="projects">
       <div className="projects-inner">
         <h1 ref={ref} className={`projects-heading title slide-up ${isVisible ? 'is-visible' : ''}`}>
           Some of my recent

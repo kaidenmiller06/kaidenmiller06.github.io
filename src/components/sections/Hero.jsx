@@ -1,4 +1,4 @@
-import useSlideUpOnMount from '../../hooks/useSlideUpOnMount';
+import useSlideUpOnVisible from '../../hooks/useSlideUpOnVisible';
 
 import ActionLink from '../ui/ActionLink';
 
@@ -8,7 +8,6 @@ import linkedin from '../../assets/icons/linkedin.svg';
 import github from '../../assets/icons/github.svg';
 import dribbble from '../../assets/icons/dribbble.svg';
 import envelope from '../../assets/icons/envelope.svg';
-import resume from '../../assets/Resume - Kaiden Miller.pdf';
 
 import './Hero.css';
 
@@ -16,18 +15,18 @@ import './Hero.css';
  * A component that displays the hero section of the website.
  */
 function Hero() {
-  const lineVisible = useSlideUpOnMount();
+  const [ref, isVisible] = useSlideUpOnVisible(1);
 
   return (
-    <section className="hero">
+    <section id="hero" className="hero">
       <div className="hero-inner">
         {/* Hero Content */}
         <div className="hero-text">
           <p className="hero-eyebrow subheading">Aspiring Software Engineer</p>
           
-          <h1 className="hero-heading title">
-            <span className={`slide-up ${lineVisible ? 'is-visible' : ''}`}>Hello, I am</span> <br />
-            <span className={`hero-blue slide-up ${lineVisible ? 'is-visible' : ''} delay-1`}>Kaiden Miller</span>
+          <h1 ref={ref} className="hero-heading title">
+            <span className={`slide-up ${isVisible ? 'is-visible' : ''}`}>Hello, I am</span> <br />
+            <span className={`hero-blue slide-up ${isVisible ? 'is-visible' : ''} delay-1`}>Kaiden Miller</span>
           </h1>
 
           <div className="hero-details subheading">
@@ -42,7 +41,7 @@ function Hero() {
             <ActionLink href="https://linkedin.com/in/kaiden-miller" image={linkedin} />
             <ActionLink href="https://github.com/kaidenmiller06" image={github} />
             <ActionLink href="https://dribbble.com/kaiden-miller-06" image={dribbble} />
-            <ActionLink href={resume} text="Resume" variant="accent" />
+            <ActionLink href={'/Resume - Kaiden Miller.pdf'} text="Resume" variant="accent" />
           </div>
         </div>
 
@@ -66,7 +65,7 @@ function Hero() {
               />
             </svg>
             <span className="hero-tooltip body-base">
-              console.log(<span className="hero-grey">"Hello World!"</span>);
+              console.log("Hello World!");
             </span>
           </div>
 

@@ -10,7 +10,7 @@ export const EXPERIENCES = [
     subtitle: "Elizabethtown College · Aug 2025 - Dec 2025",
     bullets: [
         "Assisted Computer Science I professor to mentor students and improve their learning outcomes",
-        "Expanded my debugging expertise by troubleshooting 30+ students code, resulting in faster error identification and stronger problem-solving skills",
+        "Improved my debugging skills by troubleshooting 30+ students code, resulting in stronger adaptability and problem-solving skills",
     ],
     image: taImg,
     skills: [
@@ -22,7 +22,7 @@ export const EXPERIENCES = [
     title: "Researcher",
     subtitle: "Elizabethtown College · May 2025 - April 2026",
     bullets: [
-        "Collaborated with researcher and faculty mentor to develop an AI tutor using GPT and cloud infrastructure",
+        "Collaborated with researcher and faculty mentor on AI tutor using GPT and cloud infrastructure",
         "Implemented student messaging system, professor management dashboard, and database integration to create a sound user interface and experience",
     ],
     image: researchImg,
@@ -58,7 +58,7 @@ export const EXPERIENCES = [
   },
   {
     title: "Digital Personal Shopper",
-    subtitle: "YMCA · Sep 2022 - Present",
+    subtitle: "Walmart · Jun 2024 - Aug 2024",
     bullets: [
         "Communicated with fellow associates to fulfil online orders",
         "Assisted customers with questions and concerns",

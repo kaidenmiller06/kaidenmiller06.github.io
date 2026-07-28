@@ -12,11 +12,7 @@ import { useState, useRef } from 'react';
  * @param {string} props.title - The title to display in the action link.
  */
 function ActionLink({ href, text, image, title, variant }) {
-
-    // Check link type
-    const isExternal = href.startsWith("http");
-    const isFile = href.endsWith(".pdf");
-
+    
     // Determine the classes to apply based on the variant and whether text is provided
     const classes = [
         "action-link subheading",
@@ -28,9 +24,8 @@ function ActionLink({ href, text, image, title, variant }) {
     return(
         <div className="action-link-wrapper">
             <a href={href}
-            // open external links in a new tab
-            {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
-            {...(isFile && { download: true })}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={classes}
             >
                 {image && <img src={image} alt="" />}
