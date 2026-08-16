@@ -15,13 +15,12 @@ function Projects() {
     <section id="projects" className="projects">
       <div className="projects-inner">
         <h1 ref={ref} className={`projects-heading title slide-up ${isVisible ? 'is-visible' : ''}`}>
-          Some of my recent
-          <span className="projects-blue"> projects</span>
+          Some of my recent <span className="blue"> projects</span>
         </h1>
 
         <div className="project-grid">
           {PROJECTS.map((project, i) => (
-            <ProjectCard key={i} {...project} />
+            <ProjectCard key={i} project={project} />
           ))}
         </div>
       </div>

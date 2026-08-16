@@ -1,0 +1,26 @@
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  
+  width: fit-content;
+  padding: 5px 10px;
+  gap: 10px;
+
+  background-color: #0F172A;
+  border: none;
+  border-radius: 25px;
+  
+  transition: background-color 0.2s ease;
+  cursor: default;
+}
+
+.skill-pill img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.skill-pill.outline {
+  border: 1px solid #757575;
+}

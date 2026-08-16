@@ -1,8 +1,18 @@
+.experience-carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
 .experience-carousel {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+
+  width: clamp(325px, 55vw, 450px);
+  aspect-ratio: 9 / 11;
 }
 
 .experience-carousel-slot {
@@ -10,4 +20,32 @@
   top: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
   cursor: pointer;
+}
+
+.experience-carousel-arrows {
+  display: flex;
+  gap: 16px;
+}
+
+.experience-carousel-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  background-color: #1E293B;
+  border: 1px solid #757575;
+  border-radius: 999px;
+  color: #FFFFFF;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.experience-carousel-arrow:hover {
+  background-color: #004B98;
 }

@@ -37,7 +37,7 @@
   white-space: nowrap;
 }
 
-/* Icon-only variant */
+/* Icon-only */
 .action-link-icon-only {
   justify-content: center;
   width: 42px;
@@ -76,20 +76,30 @@
 }
 
 /* Accent variant */
-.action-link-accent {
+.action-link.accent {
   background-color: #004B98;
 }
 
-.action-link-accent:hover {
+.action-link.accent:hover {
   background-color: #0060C4;
 }
 
 /* Outline variant */
-.action-link-outline {
+.action-link.outline {
+  background-color: #0F172A;
   border: 1px solid #757575;
+}
+
+.action-link.outline:hover {
+  background-color: #004B98;
+}
+
+/* Hover-only variant */
+.action-link.hover-only {
   background-color: #0F172A;
 }
 
-.action-link-outline:hover {
+.action-link.hover-only:hover {
   background-color: #004B98;
+  transform: none;
 }

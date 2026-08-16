@@ -1,0 +1,30 @@
+.portfolio-pill {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  
+  width: fit-content;
+  height: 42px;
+  padding: 0 10px;
+  gap: 10px;
+
+  background-color: #0F172A;
+  border: none;
+  border-radius: 25px;
+  
+  transition: background-color 0.2s ease;
+  cursor: default;
+}
+
+.portfolio-pill.button { cursor: pointer; }
+
+.portfolio-pill.button:hover {
+  background-color: #004B98;
+  transform: none;
+}
+
+.portfolio-pill img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}

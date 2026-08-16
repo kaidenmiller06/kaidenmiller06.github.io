@@ -24,9 +24,9 @@ function Hero() {
         <div className="hero-text">
           <p className="hero-eyebrow subheading">Aspiring Software Engineer</p>
           
-          <h1 ref={ref} className="hero-heading title">
-            <span className={`slide-up ${isVisible ? 'is-visible' : ''}`}>Hello, I am</span> <br />
-            <span className={`hero-blue slide-up ${isVisible ? 'is-visible' : ''} delay-1`}>Kaiden Miller</span>
+          <h1 ref={ref} className={`hero-heading title slide-up ${isVisible ? 'is-visible' : ''}`}>
+            Hello, I am <br />
+            <span className="delay-1 blue">Kaiden Miller</span>
           </h1>
 
           <div className="hero-details subheading">
@@ -35,7 +35,11 @@ function Hero() {
             <p>Graphic Design Minor</p>
           </div>
 
-          <ActionLink href="https://www.etown.edu" text="Elizabethtown College, PA" image={etown} />
+          <ActionLink
+            href="https://www.etown.edu"
+            text="Elizabethtown College, PA"
+            image={etown}
+          />
 
           <div className="hero-links">
             <ActionLink href="https://linkedin.com/in/kaiden-miller" image={linkedin} />
@@ -69,7 +73,11 @@ function Hero() {
             </span>
           </div>
 
-          <ActionLink href="mailto:kaiden.miller.06@gmail.com" text="kaiden.miller.06@gmail.com" image={envelope} />
+          <ActionLink
+            href="mailto:kaiden.miller.06@gmail.com"
+            text="kaiden.miller.06@gmail.com"
+            image={envelope}
+          />
         </div>
       </div>
     </section>

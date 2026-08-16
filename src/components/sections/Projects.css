@@ -22,10 +22,6 @@
   text-align: center;
 }
 
-.projects-blue {
-  color: #004B98;
-}
-
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

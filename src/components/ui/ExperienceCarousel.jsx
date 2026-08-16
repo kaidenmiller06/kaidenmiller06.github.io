@@ -6,18 +6,28 @@ import ExperienceCard from '../ui/ExperienceCard';
 
 import './ExperienceCarousel.css';
 
+/**
+ * Displays a carousel of experience cards, allowing users to navigate through experiences with automatic sliding and manual controls.
+ */
 function ExperienceCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [visibleRange, setVisibleRange] = useState(
-    window.innerWidth <= 900 ? 1 : 2
-  );
-  const timerRef = useRef(null);
+  const getVisibleRange = () => {
+    if (window.innerWidth <= 768) return 0;
+    if (window.innerWidth <= 1080) return 1;
+    return 2;
+  };
 
-  // Automatic slide every 6 seconds
+  const [visibleRange, setVisibleRange] = useState(getVisibleRange());
+  const timerRef = useRef(null);
+  const isPausedRef = useRef(false);
+
+  // Automatic slide every 10 seconds (if not paused)
   const startTimer = () => {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % EXPERIENCES.length);
+      if (!isPausedRef.current) {
+        setActiveIndex((prev) => (prev + 1) % EXPERIENCES.length);
+      }
     }, 10000);
   };
 
@@ -30,45 +40,89 @@ function ExperienceCarousel() {
   // Update visible range on window resize
   useEffect(() => {
     const handleResize = () => {
-      setVisibleRange(window.innerWidth <= 900 ? 1 : 2);
+      setVisibleRange(getVisibleRange());
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Use click sets active index and restarts timer
+  // User click sets active index and restarts timer
   const handleCardClick = (index) => {
     setActiveIndex(index);
     startTimer();
   };
 
+  // Go to previous/next card, wrapping around the ends
+  const goToPrev = () => {
+    setActiveIndex((prev) => (prev - 1 + EXPERIENCES.length) % EXPERIENCES.length);
+    startTimer();
+  };
+
+  const goToNext = () => {
+    setActiveIndex((prev) => (prev + 1) % EXPERIENCES.length);
+    startTimer();
+  };
+
+  // Pause/resume the auto-slide on hover
+  const handleMouseEnter = () => {
+    isPausedRef.current = true;
+  };
+
+  const handleMouseLeave = () => {
+    isPausedRef.current = false;
+  };
+
   return (
-    <div className="experience-carousel">
-      {EXPERIENCES.map((exp, i) => {
-        // calculate shortest distance, wrapping around the array ends
-        const total = EXPERIENCES.length;
-        let distance = i - activeIndex;
-        if (distance > total / 2) distance -= total;
-        if (distance < -total / 2) distance += total;
+    <div className="experience-carousel-wrapper">
+      <div className="experience-carousel"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {/* Map all experiences */}
+        {EXPERIENCES.map((exp, i) => {
+          const total = EXPERIENCES.length;
+          let distance = i - activeIndex;
+          if (distance > total / 2) distance -= total;
+          if (distance < -total / 2) distance += total;
 
-        // only render cards within the visible range (5 by default)
-        if (Math.abs(distance) > visibleRange) return null;
+          if (Math.abs(distance) > visibleRange) return null;
 
-        return (
-          <div
-            key={i}
-            className="experience-carousel-slot"
-            style={{
-              transform: `translateX(${distance * 190}px) scale(${1 - Math.abs(distance) * 0.15})`,
-              zIndex: 10 - Math.abs(distance),
-            }}
-            onClick={() => handleCardClick(i)}
+          return (
+            <div
+              key={i}
+              className="experience-carousel-slot"
+              style={{
+                transform: `translateX(${distance * 190}px) scale(${1 - Math.abs(distance) * 0.15})`,
+                zIndex: 10 - Math.abs(distance),
+              }}
+              onClick={() => handleCardClick(i)}
+            >
+              <ExperienceCard {...exp} />
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Navigation arrows when screen is small */}
+      {visibleRange < 2 && (
+        <div className="experience-carousel-arrows">
+          <button
+            className="experience-carousel-arrow"
+            onClick={goToPrev}
+            aria-label="Previous experience"
           >
-            <ExperienceCard {...exp} />
-          </div>
-        );
-      })}
+            ‹
+          </button>
+          <button
+            className="experience-carousel-arrow"
+            onClick={goToNext}
+            aria-label="Next experience"
+          >
+            ›
+          </button>
+        </div>
+      )}
     </div>
   );
 }

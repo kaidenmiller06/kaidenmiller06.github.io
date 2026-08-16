@@ -1,3 +1,5 @@
+import SkillPill from './SkillPill';
+
 import './ExperienceCard.css';
 
 /**
@@ -26,7 +28,7 @@ function ExperienceCard({ image, title, subtitle, bullets, skills }) {
 
       <div className="experience-footer">
         {skills.map((text, i) => (
-          <p key={i} className="experience-skill body-bullet">{text}</p>
+          <SkillPill key={i} text={text.skill} image={text.src} variant="outline" />
         ))}
       </div>
     </div>

@@ -33,22 +33,14 @@
   color: #FFFFFF;
 }
 
-.hero-heading {
-  margin: 0;
-}
-
-.hero-blue {
-  color: #004B98;
-}
+.hero-heading { margin: 0; }
 
 .hero-details {
   display: flex;
   flex-direction: column;
 }
 
-.hero-details p {
-  margin-bottom: 6px;
-}
+.hero-details p { margin-bottom: 6px; }
 
 .hero-links {
   display: flex;
