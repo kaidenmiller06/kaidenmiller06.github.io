@@ -26,11 +26,15 @@ import collage from '../../assets/portfolio/miller-etown-collage.png';
 import scad from '../../assets/portfolio/miller-scad-poster.png';
 import comboMark from '../../assets/portfolio/miller-comboMark.png';
 import madMax from '../../assets/portfolio/miller-madMax-poster.png';
-import mandoS3 from '../../assets/portfolio/theMandalorianS3.png';
+import mando from '../../assets/portfolio/miller-mandalorian.jpg';
+import mandoS3 from '../../assets/portfolio/miller-mandalorian-s3.png';
 import squidGame from '../../assets/portfolio/miller-squidGame.png';
 import card1 from '../../assets/portfolio/miller-stationarySet-card1.png';
 import card2 from '../../assets/portfolio/miller-stationarySet-card2.png';
-import letter from '../../assets/portfolio/miller-stationarySet-letter.png';
+import magazine from '../../assets/portfolio/miller-magazine-mockup.jpg';
+import pages from '../../assets/portfolio/miller-magazine-pages.png';
+import pucci from '../../assets/portfolio/miller-pucci.png';
+import ad from '../../assets/portfolio/miller-pucci-ad.png';
 
 import './Portfolio.css';
 
@@ -233,21 +237,25 @@ function Portfolio() {
             <div className="portfolio-content">
               <div className="portfolio-row">
                 <div className="portfolio-column">
-                  <img src={collage} alt="Etown 125th Anniversary Collage" className="sandbox-collage" />
-                  <img src={card1} alt="Stationary Card" className="sandbox-card" />
-                  <img src={squidGame} alt="Squid Game Poster" className="sandbox-squidGame" />
+                  <img src={collage} alt="Etown 125th Anniversary Collage" />
+                  <img src={card1} alt="Stationary Card" />
+                  <img src={mando} alt="The Mandalorian" />
+                  <img src={squidGame} alt="Squid Game Poster" />
                 </div>
 
                 <div className="portfolio-column">
-                  <img src={comboMark} alt="Combination Mark" className="sandbox-comboMark" />
-                  <img src={madMax} alt="Mad Max Poster" className="sandbox-madMax" />
-                  <img src={scad} alt="SCAD Poster" className="sandbox-scad" />
+                  <img src={comboMark} alt="Combination Mark" className="sandbox-logo" />
+                  <img src={madMax} alt="Mad Max Poster" />
+                  <img src={pucci} alt="Pucci Mockup" />
+                  <img src={scad} alt="SCAD Poster" />
                 </div>
 
                 <div className="portfolio-column">
-                  <img src={mandoS3} alt="The Mandalorian S3" className="sandbox-mandoS3" />
-                  <img src={card2} alt="Stationary Card" className="sandbox-card" />
-                  <img src={letter} alt="Stationary Letter" className="sandbox-letter" />
+                  <img src={mandoS3} alt="The Mandalorian S3" />
+                  <img src={card2} alt="Stationary Card" />
+                  <img src={ad} alt="Pucci Ad" />
+                  <img src={magazine} alt="Magazine Mockup" />
+                  <img src={pages} alt="Magazine Pages" />
                 </div>
               </div>
             </div>
@@ -269,7 +277,7 @@ function Portfolio() {
                     {chunkIntoColumns(selectedProject.images, selectedProject.columns).map((column, colIndex) => (
                       <div className="portfolio-column" key={colIndex}>
                         {column.map((image, i) => (
-                          <img key={i} src={image.src} alt={image.alt} className={image.className} />
+                          <img key={i} src={image.src} alt={image.alt} />
                         ))}
                       </div>
                     ))}
