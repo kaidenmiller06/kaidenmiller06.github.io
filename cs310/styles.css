@@ -1,0 +1,38 @@
+body {
+  background-color: lightblue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0px 50px;
+}
+
+header {
+  background-color: cornflowerblue;
+  padding: 20px;
+}
+
+a {
+  margin: 0 10px;
+}
+
+h1 {
+  color: red;
+}
+
+h2 {
+  color: navy;
+}
+
+hr {
+  border-color: pink;
+}
+
+.list {
+  font-style: italic;
+}
+
+ul > li {
+  color: blue;
+}
+
+table tr {
+  background-color: darkcyan;
+}
