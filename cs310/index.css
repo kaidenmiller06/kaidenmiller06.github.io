@@ -13,7 +13,7 @@ a {
   margin: 0 10px;
 }
 
-h1 {
+#name {
   color: red;
 }
 
@@ -27,6 +27,14 @@ hr {
 
 .list {
   font-style: italic;
+  padding-bottom: 2px;
+}
+
+#classes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-bottom: 0;
 }
 
 ul > li {
@@ -35,4 +43,12 @@ ul > li {
 
 table tr {
   background-color: darkcyan;
+}
+
+.advanced td:nth-child(2) {
+  color: lime;
+}
+
+.intermediate td:nth-child(2) {
+  color: red;
 }
